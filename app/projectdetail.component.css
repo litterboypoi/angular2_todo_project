@@ -1,0 +1,38 @@
+.projectdetail{
+    position: relative;
+}
+
+.users{
+    display:inline-block;
+    padding:0;
+    margin: 5px 5px;
+    box-sizing: content-box;
+    height:32px;
+    width: 32px;
+    border-radius: 16px;
+    border: solid 1px;
+    overflow: hidden;
+
+}
+li:hover{
+    cursor: pointer;
+}
+.users>img{
+    height: 100%;
+    width: 100%;
+}
+
+.tasks{
+    list-style-type: none;
+    background-color: rgba(255,255,255,0.5);
+    border-bottom:dashed gray 1px;
+}
+.tasks:last-child{
+    border-bottom: none;
+}
+
+.settings{
+    position: absolute;
+    top:0px;
+    right:10px;
+}

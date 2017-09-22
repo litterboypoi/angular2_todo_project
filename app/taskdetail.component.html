@@ -1,0 +1,15 @@
+<div class="taskdetail" *ngIf="task">
+    <div class="task-title">
+        <h2>{{task.name}}</h2>
+    </div>
+    <p>id:{{task.id}}</p>
+    <p>任务介绍：{{task.detail}}</p>
+    <div *ngIf="task.finished">
+        <p>这个任务已被<a href="user/{{task.finishUserId}}">{{task.finishUserName}}</a>完成</p>
+    </div>
+    <div *ngIf="!task.finished">
+        <button class="btn btn-default" (click)="finishTask()">标记完成</button>
+        <button class="btn btn-default" (click)="navigatetoedit()">修改和删除</button>
+    </div>
+    <button class="btn btn-default" (click)="back()">返回</button>
+</div>

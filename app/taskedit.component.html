@@ -1,0 +1,20 @@
+<div *ngIf="task">
+    <form role="form" novalidate>
+        <div class="form-group">
+            <label for="name">名称</label>
+            <input type="text" class="form-control" [(ngModel)]="task.name"  name="name" placeholder="请输入任务名称">
+        </div>
+        <p *ngIf="task.id">{{task.id}}</p>
+        <div class="form-group">
+            <label for="content">任务内容</label>
+            <textarea class="form-control" [(ngModel)]="task.detail"  rows="4" name="content" placeholder="请输入任务详情"></textarea>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" [(ngModel)]="task.important" name="important">重要
+            </label>
+        </div>
+        <button type="button" class="btn btn-default" (click)="submit()" >提交</button>
+    </form>
+    <button *ngIf="task.id" type="button" class="btn btn-default" (click)="deleteTask()">删除</button>
+</div>

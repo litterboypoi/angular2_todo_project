@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default" *ngIf="userId" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" routerLink="home" routerLinkActive="active">Home</a>
+    </div>
+    <div class="userMsg">
+        <div class="username">
+            <a  routerLink="/mypage">username</a>
+        </div>
+        <div class="userface" (click)="navigateToMyPage()">
+            <a>
+                <img src="/img/face.jpg">
+            </a>
+        </div>
+    </div>
+</nav>
+<div class="container">
+        <router-outlet></router-outlet>
+</div>

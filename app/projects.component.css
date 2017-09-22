@@ -1,0 +1,25 @@
+.section-title{
+	text-align: center;
+}
+
+.projectlist>li:hover{
+	cursor: pointer;
+	background-color: rgba(255,255,255,0.7);
+}
+.addProject{
+	text-align: center;
+
+}
+.active-project{
+	background-color: rgba(255,255,255,0.7);
+}
+
+.taskname{
+	font-size: 1.2rem;
+	padding:5px 10px;
+}
+.taskname:hover{
+	background-color: rgba(255,255,255,0.4);
+	cursor: pointer;
+	color:blue;
+}

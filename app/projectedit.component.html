@@ -1,0 +1,15 @@
+<div *ngIf="project">
+    <form role="form" novalidate>
+        <div class="form-group">
+            <label for="name">名称</label>
+            <input type="text" class="form-control" [(ngModel)]="project.name"  name="name" placeholder="请输入项目名称">
+        </div>
+        <div class="form-group">
+            <label for="content">任务内容</label>
+            <textarea class="form-control" [(ngModel)]="project.detail"  rows="4" name="content" placeholder="请输入项目介绍"></textarea>
+        </div>
+        <button type="button" class="btn btn-default" (click)="submit()" >提交</button>
+    </form>
+    <button *ngIf="project.id" type="button" class="btn btn-default" (click)="deleteProject()">删除</button>
+    <p *ngIf="operationMsg">{{operationMsg}}</p>
+</div>

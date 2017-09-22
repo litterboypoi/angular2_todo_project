@@ -1,0 +1,26 @@
+<div class="projectdetail" *ngIf="project">
+<h2>{{project.name}}</h2>
+	<p>{{project.detail}}</p>
+	<button class="btn btn-default" (click)="navigateToProjectEdit()">修改和删除</button>
+	<h3>参与用户</h3>
+<ul class="list-group">
+	<li class="users list-group-item" *ngFor="let user of project.userList" (click)="navigateToUser(user.id)">
+		<a><img src="{{user.faceUrl}}" /></a>
+	</li>
+</ul>
+	<button class="btn btn-default" (click)="switchIdInput()">邀请用户</button>
+	<div *ngIf="showIdInput" class="form-group">
+		<label>用户ID:</label>
+		<input type="number" #inputid (keyup.enter)="inviteUser(inputid.value)">
+		<button class="btn btn-default" (click)="inviteUser(inputid.value)">邀请</button>
+	</div>
+	<p *ngIf="showInviteMsg">{{inviteMsg}}</p>
+	<h3>任务列表</h3>
+<ul class="list-group">
+	<li  class="tasks list-group-item" *ngFor = "let task of project.taskList" (click)="onTaskSelect(task)">
+		<h4>{{task.name}}</h4>
+		<p>{{task.detail}}</p>
+	</li>
+</ul>
+	<button class="btn btn-default" (click)="navigateToTaskEdit()">添加任务</button>
+</div>

@@ -1,0 +1,31 @@
+<div *ngIf="me">
+    <div><img src="{{me.faceUrl}}"></div>
+    <div><p>id:{{me.id}}</p></div>
+    <div><p>name:{{me.name}}</p></div>
+    <div>
+        <h3>新的邀请</h3>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let invitation of me.invitationList">
+                <div *ngIf="invitation.state===0" style="float: right">
+                    <button class="btn-default btn" (click)="receive(invitation)">接受</button>
+                    <button class="btn-default btn" (click)="reject(invitation)">拒绝</button>
+                </div>
+                <p><a routerLink="/user/{{invitation.inviterId}}">{{invitation.inviterName}}</a>邀请您加入项目：
+                    <a routerLink="/home/project/{{invitation.projectId}}">{{invitation.projectName}}</a>
+                    <span *ngIf="invitation.state===1" style="color: greenyellow">已接受</span>
+                    <span *ngIf="invitation.state===2" style="color: red">已拒绝</span>
+                </p>
+
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h3>我的项目</h3>
+        <ul class="list-group">
+            <li class="list-group-item" routerLink="/home/project/{{project.id}}" *ngFor="let project of me.projectList">
+                <p>{{project.name}}</p>
+            </li>
+        </ul>
+    </div>
+
+</div>

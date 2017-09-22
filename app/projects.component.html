@@ -1,0 +1,19 @@
+<h3 class="section-title">Project List</h3>
+<ul class="list-group projectlist">
+	<li class="list-group-item" [ngClass]="{'active-project':project===selectedProject}" *ngFor = "let project of projcets" (click)="onProjectSelect(project)">
+		<div class="projectname"  >
+			<i class="glyphicon glyphicon-tasks" ></i>
+			<span>{{project.name}}</span>
+		</div>
+		<div *ngIf="project===selectedProject" >
+			<ul class="list-group">
+				<li *ngFor="let task of project.taskList" class="list-group-item taskname" (click)="navigateToTask(task);$event.stopPropagation()">
+					<p>{{task.name}}</p>
+				</li>
+			</ul>
+		</div>
+	</li>
+	<li class="list-group-item addProject" (click)="navigateToCreateProject()">
+		<i class="glyphicon glyphicon-plus"></i>
+	</li>
+</ul>

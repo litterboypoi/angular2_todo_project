@@ -1,0 +1,11 @@
+.taskdetail{
+    position: relative;
+}
+.deltask{
+    position: absolute;
+    top:0px;
+    right: 0px;
+}
+.deltask>button:hover{
+    color: red;
+}
